@@ -9,14 +9,18 @@
         android:icon="@mipmap/ic_launcher"
         android:supportsRtl="true">
 
-        <activity android:name=".VisionSampleActivity"
+        <activity android:name=".CameraActivity"
                   android:screenOrientation="landscape">
+
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
+
+        <activity android:name=".activity.ShowPhotoActivity" android:screenOrientation="landscape"> </activity>
+
 
     </application>
 

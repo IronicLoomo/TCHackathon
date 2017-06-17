@@ -20,10 +20,11 @@ import com.segway.robot.sdk.vision.stream.StreamType;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+
 /**
  * The Sample Activity demonstrate the main function of Segway Robot VisionService.
  */
-public class VisionSampleActivity extends Activity implements CompoundButton.OnCheckedChangeListener {
+public class VisionSampleActivity_backup extends Activity implements CompoundButton.OnCheckedChangeListener {
     private boolean mBind;
     private Vision mVision;
 
@@ -60,7 +61,7 @@ public class VisionSampleActivity extends Activity implements CompoundButton.OnC
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.vision_sample);
+        setContentView(R.layout.camera);
 
         // init content view
         mBindSwitch = (Switch) findViewById(R.id.bind);
@@ -177,7 +178,7 @@ public class VisionSampleActivity extends Activity implements CompoundButton.OnC
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                File f = new File(VisionSampleActivity.this.getExternalFilesDir(null).getAbsolutePath() + "/C" + System.currentTimeMillis() + ".png");
+                                File f = new File(VisionSampleActivity_backup.this.getExternalFilesDir(null).getAbsolutePath() + "/C" + System.currentTimeMillis() + ".png");
                                 try {
                                     FileOutputStream fOut = new FileOutputStream(f);
                                     mColorBitmap.compress(Bitmap.CompressFormat.PNG, 100, fOut);
@@ -205,7 +206,7 @@ public class VisionSampleActivity extends Activity implements CompoundButton.OnC
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                File f = new File(VisionSampleActivity.this.getExternalFilesDir(null).getAbsolutePath() + "/D" + System.currentTimeMillis() + ".png");
+                                File f = new File(VisionSampleActivity_backup.this.getExternalFilesDir(null).getAbsolutePath() + "/D" + System.currentTimeMillis() + ".png");
                                 try {
                                     FileOutputStream fOut = new FileOutputStream(f);
                                     Bitmap mDepthGreyBitmap = depth2Grey(mDepthBitmap);
